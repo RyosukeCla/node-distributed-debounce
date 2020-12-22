@@ -23,7 +23,6 @@ import { distributedDebounce } from 'node-distributed-debounce';
 // const { distributedDebounce } = require('node-distributed-debounce');
 import redis from 'redis';
 
-const wait = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 const redisclient = redis.createClient();
 
 function debouncedCall(index: number) {
@@ -36,10 +35,11 @@ function debouncedCall(index: number) {
   }).catch(e => console.error(e));
 }
 
+const wait = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 function main() {
   for (let i = 0; i < 10; i++) {
     debouncedCall(i);
-    wait(100);
+    await wait(100);
   }
 }
 
