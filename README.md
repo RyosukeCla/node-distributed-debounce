@@ -1,5 +1,7 @@
 # node-dsitributed-debounce
 
+debounce function for distributed system with redis and nodejs.
+
 ## Installation
 
 ```sh
