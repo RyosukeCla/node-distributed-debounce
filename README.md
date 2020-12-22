@@ -11,7 +11,8 @@ $ npm i -S node-distributed-debounce
 example:
 
 ```ts
-import distributedDebounce from 'node-distributed-debounce';
+import { distributedDebounce } from 'node-distributed-debounce';
+// const { distributedDebounce } = require('node-distributed-debounce');
 import redis from 'redis';
 
 const wait = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));

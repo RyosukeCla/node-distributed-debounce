@@ -1,8 +1,7 @@
 import assert from "assert";
-import distributedDebounce from "../src";
+import { distributedDebounce, wait }  from "../src";
 import redis from "redis";
 
-const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 test("atomicity", async () => {
   const redisclient = redis.createClient();
   let counter = 0;
@@ -19,7 +18,7 @@ test("atomicity", async () => {
       }
     );
   }
-  await sleep(1300);
+  await wait(1300);
   assert(counter === 1);
 });
 
@@ -40,9 +39,9 @@ test("debounce", async () => {
         redisclient,
       }
     );
-    await sleep(10);
+    await wait(10);
   }
-  await sleep(1300);
+  await wait(1300);
   assert(lastExecuted === 29);
   assert(counter === 1);
 });
@@ -61,8 +60,8 @@ test("key", async () => {
         redisclient,
       }
     );
-    await sleep(10);
+    await wait(10);
   }
-  await sleep(1300);
+  await wait(1300);
   assert(counter === 10);
 });
