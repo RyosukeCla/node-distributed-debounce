@@ -1,5 +1,5 @@
 {
-  "name": "distributed-debounce",
+  "name": "node-distributed-debounce",
   "version": "1.0.0",
   "description": "debounce function for distributed system with redis and nodejs.",
   "repository": "git@github.com:RyosukeCla/node-distributed-debounce.git",
