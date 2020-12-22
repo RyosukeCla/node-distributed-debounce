@@ -1,6 +1,6 @@
 {
   "name": "node-distributed-debounce",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "debounce function for distributed system with redis and nodejs.",
   "keywords": ["nodejs", "debounce", "distributed-system", "redis", "distributed"],
   "repository": "git@github.com:RyosukeCla/node-distributed-debounce.git",
