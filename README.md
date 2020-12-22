@@ -6,7 +6,7 @@
 $ npm i -S node-distributed-debounce
 ```
 
-## Usave
+## Usage
 
 example:
 
