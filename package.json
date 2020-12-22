@@ -8,8 +8,7 @@
   },
   "author": "RyosukeCla <ryosukeclarinet@gmail.com>",
   "license": "MIT",
-  "main": "index.js",
-  "bin": "./lib/index.js",
+  "main": "./lib/index.js",
   "files": [
     "lib"
   ],
