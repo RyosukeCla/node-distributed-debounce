@@ -17,9 +17,9 @@ import redis from 'redis';
 const wait = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 const redisclient = redis.createClient();
 
-function debouncedCall() {
+function debouncedCall(index: number) {
   distributedDebounce(() => {
-    console.log('called');
+    console.log('called', index);
   }, {
     wait: 5, // sec
     key: 'dist:debounce:call', // key for debounce
@@ -29,7 +29,7 @@ function debouncedCall() {
 
 function main() {
   for (let i = 0; i < 10; i++) {
-    debouncedCall();
+    debouncedCall(i);
     wait(100);
   }
 }
@@ -39,7 +39,7 @@ function main() {
 output:
 
 ```
-called
+called 9
 ```
 
 
