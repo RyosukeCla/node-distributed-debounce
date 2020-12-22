@@ -3,9 +3,6 @@ export const wait = (ms: number) => new Promise((resolve) => setTimeout(resolve,
 
 /**
  * distributed debounce function using redis.
- *
- * more detail
- *  - https://github.com/plaidev/karte-io-systems/issues/24054
  */
 async function distributedDebounce(
   callback: () => any,
