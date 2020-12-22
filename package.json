@@ -1,7 +1,7 @@
 {
   "name": "distributed-debounce",
   "version": "1.0.0",
-  "description": "",
+  "description": "debounce function for distributed system with redis and nodejs.",
   "repository": "git@github.com:RyosukeCla/node-distributed-debounce.git",
   "engines": {
     "node": ">=10.12.0"
