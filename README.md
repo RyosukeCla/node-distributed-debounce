@@ -8,6 +8,12 @@ debounce function for distributed system with redis and nodejs.
 $ npm i -S node-distributed-debounce
 ```
 
+and install redis
+
+```sh
+$ npm i -S redis
+```
+
 ## Usage
 
 example:
