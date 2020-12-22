@@ -12,6 +12,7 @@ and install redis
 
 ```sh
 $ npm i -S redis
+$ npm i -D @types/redis
 ```
 
 ## Usage
