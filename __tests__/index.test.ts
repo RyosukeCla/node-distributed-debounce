@@ -1,5 +1,5 @@
 import assert from "assert";
-import { distributedDebounce, wait }  from "../src";
+import { distributedDebounce, wait } from "../src";
 import redis from "redis";
 
 test("atomicity", async () => {

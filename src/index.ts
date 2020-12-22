@@ -1,5 +1,6 @@
 import type { RedisClient } from "redis";
-export const wait = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
+export const wait = (ms: number) =>
+  new Promise((resolve) => setTimeout(resolve, ms));
 
 /**
  * distributed debounce function using redis.
@@ -37,8 +38,8 @@ async function distributedDebounce(
   const currentTicket = await new Promise<number>((resolve, reject) => {
     args.redisclient.get(args.key, (error, result) => {
       if (error) return reject(error);
-      else if (!result) return resolve(ownedTicket);
       // when key expired.
+      else if (!result) return resolve(ownedTicket);
       else return resolve(parseInt(result));
     });
   });
