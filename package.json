@@ -1,6 +1,6 @@
 {
   "name": "node-distributed-debounce",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "debounce function for distributed system with redis and nodejs.",
   "keywords": ["nodejs", "debounce", "distributed-system", "redis", "distributed"],
   "repository": "git@github.com:RyosukeCla/node-distributed-debounce.git",
@@ -21,7 +21,7 @@
     "test": "ts-mocha  --exit --ui tdd ./__tests__/*.ts",
     "prettier": "npx prettier --write ./__tests__/**/*.ts ./src/**/*.ts",
     "build": "tsc -p ./tsconfig.json",
-    "prepublish": "npm run build"
+    "prepublish": "npm run test && npm run build"
   },
   "peerDependencies": {
     "redis": ">= 2.x"
