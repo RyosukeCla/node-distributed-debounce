@@ -61,7 +61,7 @@ called 9
 ## Algorithm
 
 ```
-FUNCTION DISTRIBUTED_DEBOUCE(key, wait, callback)
+FUNCTION DISTRIBUTED_DEBOUNCE(key, wait, callback)
 
 currentCounter = MULTI
   INCR(key)
