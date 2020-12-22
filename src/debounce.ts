@@ -48,7 +48,7 @@ async function distributedDebounce(
   if (currentCount !== counter) return;
 
   // lock for atomicity
-  const ok = await new Promise<"OK" | null>((resolve, reject) => {
+  const ok = await new Promise<"OK" | undefined>((resolve, reject) => {
     args.redisclient.set(
       `${args.key}_lock`,
       "",
