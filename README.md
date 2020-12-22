@@ -45,8 +45,8 @@ called
 
 ## QA
 
-Q: Is it works with redis cluster?
-A: Yes, it is.
+- Q: Is it works with redis cluster?
+- A: Yes, it is.
 
 ## Algorithm
 
