@@ -24,7 +24,7 @@
     "prepublish": "npm run build"
   },
   "peerDependencies": {
-    "redis": "^2.8.0"
+    "redis": ">= 2.x"
   },
   "devDependencies": {
     "@types/mocha": "^8.2.0",
