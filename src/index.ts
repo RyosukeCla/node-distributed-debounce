@@ -19,7 +19,7 @@ async function distributedDebounce(
   }
 ) {
   // incr counter
-  const currentCount = await new Promise<number>((resolve, reject) => {
+  const ownedTicket = await new Promise<number>((resolve, reject) => {
     args.redisclient
       .multi()
       .incr(args.key)
@@ -34,15 +34,15 @@ async function distributedDebounce(
   await wait(args.wait * 1000);
 
   // check this counting is the latest.
-  const counter = await new Promise<number>((resolve, reject) => {
+  const currentTicket = await new Promise<number>((resolve, reject) => {
     args.redisclient.get(args.key, (error, result) => {
       if (error) return reject(error);
-      else if (!result) return resolve(currentCount);
+      else if (!result) return resolve(ownedTicket);
       // when key expired.
       else return resolve(parseInt(result));
     });
   });
-  if (currentCount !== counter) return;
+  if (ownedTicket !== currentTicket) return;
 
   // lock for atomicity
   const ok = await new Promise<"OK" | undefined>((resolve, reject) => {

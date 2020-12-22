@@ -63,15 +63,15 @@ called 9
 ```
 FUNCTION DISTRIBUTED_DEBOUNCE(key, wait, callback)
 
-currentCounter = MULTI
+ticket = MULTI
   INCR(key)
   EXPRE(key, wait)
 EXEC
 
 SLEEP(wait)
 
-counter = GET(key)
-IF currentCounter != counter
+currentTicket = GET(key)
+IF currentTicket != ticket
   EXIT
 END
 
