@@ -12,6 +12,8 @@ jobs:
           --health-interval 10s
           --health-timeout 5s
           --health-retries 5
+        ports:
+          - 6379:6379
     container: node:14-alpine
     steps:
       - name: checkout
