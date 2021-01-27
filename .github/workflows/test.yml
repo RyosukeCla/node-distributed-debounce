@@ -1,0 +1,22 @@
+name: test
+on: [push, pull_request]
+jobs:
+  test:
+    name: "test on nodejs 14"
+    runs-on: ubuntu-18.04
+    services:
+      redis:
+        image: redis
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+    container: node:14-alpine
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: install
+        run: npm i
+      - name: test
+        run: npm test
