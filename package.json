@@ -10,6 +10,7 @@
   "author": "RyosukeCla <ryosukeclarinet@gmail.com>",
   "license": "MIT",
   "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
   "files": [
     "lib"
   ],
