@@ -2,8 +2,12 @@ import assert from "assert";
 import { distributedDebounce, wait } from "../src";
 import redis from "redis";
 
+const redisclient = redis.createClient({
+  host: process.env.REDIS_HOST || 'localhost',
+  port: parseInt(process.env.REDIS_PORT) || 6379,
+});
+
 test("atomicity", async () => {
-  const redisclient = redis.createClient();
   let counter = 0;
   const key = `dist:debounce:call:atomicity:${Math.random()}`;
   for (let i = 0; i < 50; i++) {
@@ -23,7 +27,6 @@ test("atomicity", async () => {
 });
 
 test("debounce", async () => {
-  const redisclient = redis.createClient();
   let lastExecuted = -1;
   let counter = 0;
   const key = `dist:debounce:call:debounce:${Math.random()}`;
@@ -47,7 +50,6 @@ test("debounce", async () => {
 });
 
 test("key", async () => {
-  const redisclient = redis.createClient();
   let counter = 0;
   for (let i = 0; i < 10; i++) {
     distributedDebounce(
