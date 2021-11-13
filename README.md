@@ -55,8 +55,8 @@ called 9
 
 ## QA
 
-- Q: Is it works with redis cluster?
-- A: Yes, it is.
+- Q: Does it work with redis cluster?
+- A: Yes.
 
 ## Algorithm
 
