@@ -1,4 +1,4 @@
-> 👉 I recommend to use [temporal.io](https://temporal.io) to execute something durably in distributed systems. It's really flexible and useful.
+> 👉 I recommend to use [temporal.io](https://temporal.io) to durably execute something in distributed systems. It's really flexible and useful.
 
 # node-dsitributed-debounce
 
