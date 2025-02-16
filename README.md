@@ -1,3 +1,5 @@
+> I recommend to use [https://temporal.io](temporal.io) to execute something durably in distributed systems. It's really flexible and useful.
+
 # node-dsitributed-debounce
 
 debounce function for distributed system with redis and nodejs.
